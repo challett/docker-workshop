@@ -4,11 +4,17 @@ Simple static app and Dockerfile for use in Docker Workshop.  Example taken from
 ## Commands you'll need
 Create the image:
 `docker build . -t workshop-image`
-What it means: Create an image called `workshop-image` using the current directory as the context with the file called `Dockerfile` as the Dockerfile (default).
+
+What it means: 
+
+Create an image called `workshop-image` using the current directory as the context with the file called `Dockerfile` as the Dockerfile (default).
 
 Run the image as a container:
 `docker run --rm -p 8080:80 workshop-image`
-What it means: run the `workshop-image` docker image and forward port 8080 of the host to 80 on the container.  This lets us browse the content being served.
+
+What it means: 
+
+run the `workshop-image` docker image and forward port 8080 of the host to 80 on the container.  This lets us browse the content being served.
 
 If the Dockerfile is valid you should now be able to browse localhost:8080 in your browser to see the website being served
 
