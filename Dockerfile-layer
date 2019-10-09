@@ -1,0 +1,7 @@
+FROM nginx
+ENV AUTHOR=Docker
+
+WORKDIR /usr/share/nginx/html
+COPY Hello_docker.html /usr/share/nginx/html
+RUN mv Hello_docker.html index.html
+
