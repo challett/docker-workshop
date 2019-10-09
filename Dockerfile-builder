@@ -1,0 +1,12 @@
+FROM alpine AS builder
+ENV AUTHOR=Docker
+
+WORKDIR /usr/share/nginx/html
+COPY Hello_docker.html /tmp/Hello_docker.html
+RUN sed -e s/Docker/"$AUTHOR"/ /tmp/Hello_docker.html > index.html
+
+FROM nginx
+MAINTAINER Connor Hallett <connor.hallett@capco.com>
+
+COPY --from=builder /tmp/Hello_docker.html /usr/share/nginx/html/index.html
+
