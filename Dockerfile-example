@@ -1,0 +1,8 @@
+FROM alpine
+MAINTAINER connor.hallett@capco.com
+
+RUN echo "Hello Docker!" 
+
+RUN echo "This is a file created in the final image but in the base image" > NEWFILE.txt
+
+CMD echo "This is coming from your first running container!"
